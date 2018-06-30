@@ -1,0 +1,49 @@
+# Questions
+
+## What's `stdint.h`?
+
+a header file in the standard C library that enables the writing of different typedefs which can specify size/width of integer types
+
+## What's the point of using `uint8_t`, `uint32_t`, `int32_t`, and `uint16_t` in a program?
+
+to specify the number of bits in a signed or unsigned integer type
+
+## How many bytes is a `BYTE`, a `DWORD`, a `LONG`, and a `WORD`, respectively?
+
+1, 4, 4, 2
+
+## What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
+
+66, 77
+
+## What's the difference between `bfSize` and `biSize`?
+
+bfSize is the byte size of the entire bitmap file, biSize is the byte size of the structure
+
+## What does it mean if `biHeight` is negative?
+
+the DIB is top-down and the origin is the upper left corner
+
+## What field in `BITMAPINFOHEADER` specifies the BMP's color depth (i.e., bits per pixel)?
+
+biBitCount
+
+## Why might `fopen` return `NULL` in lines 24 and 32 of `copy.c`?
+
+If we are somehow unable to open the file, then the pointer *inptr will receive a null value
+
+## Why is the third argument to `fread` always `1` in our code?
+
+because we want to store one of the bitmapfileheader and bitmapinfoheader into the inptr buffer
+
+## What value does line 63 of `copy.c` assign to `padding` if `bi.biWidth` is `3`?
+
+3
+
+## What does `fseek` do?
+
+skips over any padding that was originally in the given file
+
+## What is `SEEK_CUR`?
+
+a constant used to notify fseek where to add the offset padding
